@@ -44,16 +44,16 @@ class ConfirmApp(App):
         self.confirm = confirm
         self.cancel = cancel
         App.__init__(self, parent)
-        print 'ConfirmApp Loaded with message: ' + message
+        print('ConfirmApp Loaded with message: ' + message)
 
     def key_return(self, event):
-        print ' >> Confirmed!'
+        print(' >> Confirmed!')
         if self.confirm is not None:
             return self.confirm()
         return self.exit()
 
     def key_escape(self, event):
-        print ' >> Abandoned!'
+        print(' >> Abandoned!')
         if self.cancel is not None:
             return self.cancel()
         return self.exit()
