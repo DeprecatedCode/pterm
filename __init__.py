@@ -4,7 +4,11 @@ Pterm provides UI elements for building a variety of functional console applicat
 
 """
 
-import Tkinter as tk
+try:
+	import Tkinter as tk
+except ImportError:
+	import tkinter as tk
+
 from lib import *
 from root import Root
 
@@ -20,7 +24,7 @@ class Pterm(tk.Frame):
     def __init__(self, **options):
 
         for key, value in self.defaults.items():
-            if not options.has_key(key) or options[key] is None:
+            if key not in options or options[key] is None:
                 options[key] = value
         self.options = options
 
