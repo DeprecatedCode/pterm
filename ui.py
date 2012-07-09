@@ -1,4 +1,5 @@
 class Area:
+    "Any UI element should descend from Area"
 
     pass
 
