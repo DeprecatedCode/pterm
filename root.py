@@ -23,6 +23,5 @@ class Root(BucketApp):
         self.parent.exit()
 
     def key_escape(self, event):
-        print('Loading exit ConfirmApp')
         self.title('Exit?')
         return ConfirmApp(self, "Are you sure you would like to exit Pterm?", self.exit, self.activate)
